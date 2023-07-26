@@ -8,5 +8,5 @@ IMAGES_TO_DELETE=$(sudo docker images --format "{{.ID}} {{.CreatedAt}}" | sort -
 
 # Loop through the images and delete each one
 for IMAGE_ID in ${IMAGES_TO_DELETE}; do
-    sudo docker rmi ${IMAGE_ID}
+    sudo docker rmi -f ${IMAGE_ID}
 done
