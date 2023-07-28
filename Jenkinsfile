@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'Jenkins-slave' }
+    agent { label 'jenkins-slave' }
     environment {
         IMAGE = 'nodeapp'
         TAG = sh(returnStdout: true, script: "git rev-parse --short=10 HEAD").trim()
