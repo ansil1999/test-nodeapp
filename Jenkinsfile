@@ -21,7 +21,7 @@ pipeline {
         stage('Deploy - dev') {
             steps {
                 sh 'sudo docker rm -f nodeaapdev'
-                sh 'sudo docker run -dit --name nodeaapdev -p 8080:8082 ${IMAGE}:${TAG}'
+                sh 'sudo docker run -dit --name nodeaapdev -p 8081:8082 ${IMAGE}:${TAG}'
                 sh 'bash ./cleanup_old_images.sh'
             }
         }
