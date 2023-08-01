@@ -9,7 +9,7 @@ pipeline {
             steps {
                 git(
                     url: "https://github.com/ansil1999/test-nodeapp.git",
-                    branch: "main"
+                    branch: "dev"
                 )
             }
         }
