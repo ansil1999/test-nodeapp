@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'jenkins-slave' }
     environment {
-        IMAGE = 'nodeapp'
+        IMAGE = 'nodeapp1'
         TAG = sh(returnStdout: true, script: "git rev-parse --short=10 HEAD").trim()
     }
     stages {
@@ -20,8 +20,8 @@ pipeline {
         }  
         stage('Deploy') {
             steps {
-                sh 'sudo docker rm -f nodeaap'
-                sh 'sudo docker run -dit --name nodeaap -p 8081:8081 ${IMAGE}:${TAG}'
+                sh 'sudo docker rm -f nodeaapdev'
+                sh 'sudo docker run -dit --name nodeaapdev -p 8081:8081 ${IMAGE}:${TAG}'
                 sh 'bash ./cleanup_old_images.sh'
             }
         }
