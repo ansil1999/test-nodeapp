@@ -7,8 +7,7 @@ pipeline {
     stages {
         stage("Clone Git Repository") {
             steps {
-                git(
-                    url: "https://github.com/ansil1999/test-nodeapp.git",
+                git(url: "https://github.com/ansil1999/test-nodeapp.git",
                     branch: "main"
                 )
             }
