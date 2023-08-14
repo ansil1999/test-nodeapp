@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: ansil1599/nodeapp-ansil
+  repository: ansil1599/nodeapp-ansil:latest
   tag: latest
   pullPolicy: IfNotPresent
 
